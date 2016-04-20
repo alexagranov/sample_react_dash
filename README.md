@@ -1,16 +1,6 @@
 # React Sample Dashboard
 
-This is a sample project to serve as an introduction to React as well as
-the beginnings of a boilerplate approach to building React apps at The
-Orchard.  The aim is to offer a repo that can be forked/cloned in order to
-quickly get started building an application that makes use of coding
-standards as well as baseline packages in use at The Orchard.
-
-The existing
-[frontend-distribution](https://github.com/theorchard/frontend-distribution)
-project was much of the inspiration behind this boilerplate effort, while the
-structure of the dashboard components was almost entirely lifted from the
-[official React tutorial](http://facebook.github.io/react/docs/tutorial.html).
+This is a sample project to serve as an introduction to React.
 
 Examples of packages/methodologies that make up our baseline:
 
@@ -39,6 +29,12 @@ browser as a local file will not enable all necessary JS functionality).
 
 ```sh
 npm start
+```
+
+#### Boot a server on an external interface ####
+
+```sh
+npm start -- --host <external_ip>
 ```
 
 #### Need a custom HOST/PORT? ####
@@ -87,21 +83,3 @@ npm run test
 ```sh
 npm run lint
 ```
-
-## TODO
-
-- React is all about *components*.  This boilerplate project should make use of
-  a basic component structure for the application, i.e., an App component with
-  initialization, etc.  See
-  [frontend-distribution](https://github.com/theorchard/frontend-distribution)
-  or a tutorial
-  [like this](http://tutorialzine.com/2015/04/first-webapp-react/) for what
-  that could look like.
-
-- Add Redux
-
-- Add Mocha for testing
-
-- Add Bluebird for promises
-
-- Add React-Bootstrap
