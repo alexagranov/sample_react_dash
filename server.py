@@ -56,5 +56,5 @@ def metrics_handler():
 if __name__ == '__main__':
     socketio.run(
         app,
-        host=os.environ.get("BIND_IP", '127.0.0.1'),
+        host=os.environ.get("BIND_HOST", '127.0.0.1'),
         port=int(os.environ.get("BIND_PORT", 3000)))

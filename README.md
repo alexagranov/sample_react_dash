@@ -1,6 +1,18 @@
 # React Sample Dashboard
 
-This is a sample project to serve as an introduction to React.
+This is a sample project to serve as an introduction to React as well as
+the beginnings of a boilerplate for building React apps that hit a Flask
+backend server.
+
+The aim is to offer a repo that can be forked/cloned in order to
+quickly get started building an application that makes use of coding
+standards as well as baseline packages in use at The Orchard.
+
+The existing
+[frontend-distribution](https://github.com/theorchard/frontend-distribution)
+project was much of the inspiration behind this boilerplate effort, while the
+structure of the dashboard components was almost entirely lifted from the
+[official React tutorial](http://facebook.github.io/react/docs/tutorial.html).
 
 Examples of packages/methodologies that make up our baseline:
 
@@ -31,18 +43,12 @@ browser as a local file will not enable all necessary JS functionality).
 npm start
 ```
 
-#### Boot a server on an external interface ####
-
-```sh
-npm start -- --host <external_ip>
-```
-
 #### Need a custom HOST/PORT? ####
 If you'd like to expose your server to team members in the office, you'll need
 to have webpack-dev-server bind to your machine's office ip (_not_ localhost):
 
 ```sh
-npm start -- --hort <external interface ip> --port <port>
+npm start -- --host <external interface ip> --port <port>
 ```
 
 In order to handle requests to `/api/metrics` to fetch or add data we will run

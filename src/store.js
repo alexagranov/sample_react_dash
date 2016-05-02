@@ -1,12 +1,13 @@
-import { applyMiddleware, createStore } from 'redux';
-import reducer from './reducer';
+import { applyMiddleware, compose, createStore } from 'redux';
+import reducer, { INITIAL_STATE } from './reducer';
 import remoteActionMiddleware from './remote_action_middleware';
 
 const makeStore = (socket) => {
-    const createStoreWithMiddleware = applyMiddleware(
-        remoteActionMiddleware(socket)
-    )(createStore);
-    return createStoreWithMiddleware(reducer);
+    const store = createStore(reducer, INITIAL_STATE, compose(
+        applyMiddleware(remoteActionMiddleware(socket)),
+        window.devToolsExtension ? window.devToolsExtension() : f => f
+    ));
+    return store;
 };
 
 export default makeStore;

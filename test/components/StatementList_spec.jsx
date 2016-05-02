@@ -1,7 +1,9 @@
 import React from 'react';
 import { List } from 'immutable';
 import { renderIntoDocument } from 'react-addons-test-utils';
+import { Provider } from 'react-redux';
 import StatementList from '../../src/components/StatementList';
+import makeStore from '../../src/store';
 
 describe('StatementList', () => {
     const statements = List.of(
@@ -10,8 +12,12 @@ describe('StatementList', () => {
     );
 
     it('renders a list of statements', () => {
+        const store = makeStore();
+
         renderIntoDocument(
-            <StatementList statements={statements} />
+            <Provider store={store}>
+                <StatementList statements={statements} />
+            </Provider>
         );
     });
 
